@@ -1,0 +1,19 @@
+{
+  "name": "cat-clicker-app",
+  "version": "1.0.0",
+  "description": "Cat clicker app for Udacity's FEND JS Desing Patterns course",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "cat",
+    "clicker",
+    "udacity"
+  ],
+  "author": "Alan Sánchez",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.0"
+  }
+}
