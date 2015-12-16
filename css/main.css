@@ -1,0 +1,43 @@
+body{
+	text-align: center;
+	font-family: sans-serif;
+}
+
+.counter {
+	width: 40px;
+	height: 40px;
+	color: #fff;
+	font-size: 16px;
+	font-weight: bold;
+	position: absolute;
+	background: red;
+	top: 10px;
+	left: 10px;
+	border-radius: 50%;
+}
+
+.counter span {
+	display: block;
+	margin-top: 11px;
+}
+
+#cats-container {
+	max-width: 800px;
+	margin:  0 auto;
+
+}
+
+.cat {
+	max-width: 200px;
+	border: 5px solid #bbb;
+	margin: 0 20px 20px 0;
+	float: left;
+	position: relative;
+	min-height: 180px;
+}
+
+.cat-picture {
+	width: 200px;
+	cursor: pointer;
+	margin-bottom: 2px;
+}
