@@ -3,27 +3,27 @@ var model = {
     "data": [
       {
         "name":  "Patotas",
-        "image": "/images/patotas.jpg",
+        "image": "images/patotas.jpg",
         "clickCount": 0
       },
       {
         "name":  "Roo",
-        "image": "/images/roo.jpg",
+        "image": "images/roo.jpg",
         "clickCount": 0
       },
       {
         "name":  "Caty",
-        "image": "/images/caty.jpg",
+        "image": "images/caty.jpg",
         "clickCount": 0
       },
       {
         "name":  "McMau",
-        "image": "/images/mcmau.jpg",
+        "image": "images/mcmau.jpg",
         "clickCount": 0
       },
       {
-        "name":  "Panterota",
-        "image": "/images/panterota.jpg",
+        "name":  "Pantera",
+        "image": "images/pantera.jpg",
         "clickCount": 0
       }
     ],
@@ -35,10 +35,9 @@ var model = {
         if(allCats[i].name === catName) {
           return allCats[i];
         }
-     }
+      }
   }
 };
-
 
 var manager = {
 	getCatInfo: function(catName){
@@ -47,14 +46,33 @@ var manager = {
 
   getAllCatsInfo: function() {
     return model.data;
+  },
+
+  getOneCat: function(catName) {
+    return model.getOneCat(catName);
+  },
+
+  addClick: function(catName) {
+    var allCats = model.data;
+
+    for(var i = 0; i < allCats.length; i++) {
+      if(allCats[i].name === catName) {
+        allCats[i].clickCount ++;
+      }
+    }
+
+    viewCat.render(catName);
+  },
+
+  init: function() {
+    viewList.init();
+    viewCat.init();
   }
 };
 
 var viewList = {
 	init: function() {
-
-
-
+    this.render();
 	},
 
 	render: function() {
@@ -72,54 +90,33 @@ var viewList = {
 
 };
 
-var viewCat = {};
+var viewCat ={
+  init: function() {
+    $('.cat-item').on('click', function() {
+      viewCat.render($(this).text());
+      console.log(this);
+    });
 
+    $('#cat-container').on('click', function() {
+      var catName = $(this).siblings('h1').text();
+      manager.addClick(catName);
+    });
+  },
 
+  render: function(catName) {
+    var currentCat = manager.getOneCat(catName);
+    var currentCatName = currentCat.name;
+    var currentCatImg = currentCat.image;
+    var currentCatClicks = currentCat.clickCount;
 
+    $("#click-counter").show().text(currentCatClicks);
 
-
-
-
-
-
-
-
-/*
-var cats =  {
-	"names" : [
-		"Allison",
-		"Johnson"
-	]
-}
-
-
-var Cat = function(){
-	this.counter = 0;
-
-	var catNames = cats.names;
-	for(var i = 0; i < catNames.length; i ++) {
-		console.log(catNames[i]);
-		// var
-		$("#cats-container").append("<div class="cat " + catNames[i] + ""><div class="counter"><span>0</span></div><img onclick="startCats.addClick()" class="cat-picture" src="images/" + catNames[i] + ".jpg" />" + catNames[i] + "</div>");
-	}
+    $('#cat-h1').text(currentCatName);
+    $('#cat-container').html('<img src="'+currentCatImg+'" />');
+  }
 };
 
-Cat.prototype.addClick = function() {
-
-	console.log(this);
-
-	// $(".cat-picture").on("click", function() {
-	// 	var currentCount = Number($("#counter").html());
-	// 	currentCount ++;
-
-	// 	$("#counter").html(currentCount);
-	// });
-};
+manager.init();
 
 
-var startCats = new Cat();
-
-// $(".cat-picture").on("click", startCats.addClick());
-
-*/
 
