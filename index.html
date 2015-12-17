@@ -18,10 +18,25 @@
 
         <main>
             <h1 id="cat-h1">Select a cat from the list!</h1>
-            <div id="cat-container">
+            <div id="cat-container"></div>
+            <div id="click-counter"></div>
+            <button id="admin-button">Admin mode</button>
+            <div id="admin-area">
+                <form>
+                    <label for="new-name">Name:</label>
+                    <input type="text" name="new-name" id="new-name" />
 
+                    <label for="new-picture">Image URL:</label>
+                    <input type="text" name="new-picture" id="new-picture" />
+
+                    <label for="new-click-count">Click count:</label>
+                    <input type="text" name="new-click-count" id="new-click-count" />
+
+                    <button id="save">Save</button>
+                    <button id="cancel">Cancel</button>
+                    <div class="clear-fix"></div>
+                </form>
             </div>
-            <div id="click-counter">0</div>
         </main>
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
