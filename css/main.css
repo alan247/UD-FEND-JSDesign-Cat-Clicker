@@ -1,5 +1,4 @@
 body{
-	text-align: center;
 	font-family: sans-serif;
 }
 
@@ -10,6 +9,19 @@ aside {
 	border-right: 4px solid #888;
 }
 
+#cat-list {
+	padding: 0;
+}
+
+.cat-item {
+    list-style: none;
+    padding: 20px;
+    border-bottom: 1px solid #ccc;
+
+}
+
+
+/*
 .counter {
 	width: 40px;
 	height: 40px;
@@ -34,7 +46,7 @@ aside {
 
 }
 
-.cat {
+.cat{
 	max-width: 200px;
 	border: 5px solid #bbb;
 	margin: 0 20px 20px 0;
@@ -47,4 +59,4 @@ aside {
 	width: 200px;
 	cursor: pointer;
 	margin-bottom: 2px;
-}
+}*/
